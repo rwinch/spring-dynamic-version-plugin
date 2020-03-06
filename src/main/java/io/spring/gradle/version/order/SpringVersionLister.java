@@ -65,7 +65,7 @@ public class SpringVersionLister implements ComponentMetadataVersionLister {
 				e.printStackTrace();
 			}
 			List<String> result = new ArrayList(versions);
-			System.out.println(result);
+			System.out.println("Sorted versions are " + result);
 			details.listed(result);
 		});
 	}

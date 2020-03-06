@@ -13,14 +13,16 @@ public class RcStatusRule implements ComponentMetadataRule {
 	@Override
 	public void execute(ComponentMetadataContext context) {
 		ComponentMetadataDetails details = context.getDetails();
-		details.setStatusScheme(Arrays.asList("integration", "milestone", "rc", "release"));
+		details.setStatusScheme(Arrays.asList("integration", "milestone", "rc", "release", "sr"));
 		String version = context.getDetails().getId().getVersion();
 		if (version.endsWith("-SNAPSHOT")) {
 			details.setStatus("integration");
-		} else if (version.matches("M\\d+")) {
+		} else if (version.matches(".*?M\\d+$")) {
 			details.setStatus("milestone");
-		} else if (version.matches("RC\\d+")) {
+		} else if (version.matches(".*?RC\\d+$")) {
 			details.setStatus("rc");
+		} else if (version.matches(".*?SR\\d+$")) {
+			details.setStatus("sr");
 		} else {
 			details.setStatus("release");
 		}

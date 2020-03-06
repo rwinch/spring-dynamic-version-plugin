@@ -344,7 +344,7 @@ public class ComparableVersion
 			ALIASES.put( "final", "" );
 			ALIASES.put( "release", "" );
 			// Add a new alias for sr
-			ALIASES.put( "sr", "" );
+//			ALIASES.put( "sr", "" );
 			ALIASES.put( "cr", "rc" );
 		}
 

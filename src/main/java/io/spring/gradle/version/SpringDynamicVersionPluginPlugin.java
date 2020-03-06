@@ -22,14 +22,14 @@ public class SpringDynamicVersionPluginPlugin implements Plugin<Project> {
                 handler.all(RcStatusRule.class);
             }
         });
-        project.getRepositories().configureEach(new Action<ArtifactRepository>() {
-            @Override
-            public void execute(ArtifactRepository repository) {
-                if (repository instanceof MetadataSupplierAware) {
-                    ((MetadataSupplierAware) repository).setComponentVersionsLister(
-                            SpringVersionLister.class);
-                }
-            }
-        });
+//        project.getRepositories().configureEach(new Action<ArtifactRepository>() {
+//            @Override
+//            public void execute(ArtifactRepository repository) {
+//                if (repository instanceof MetadataSupplierAware) {
+//                    ((MetadataSupplierAware) repository).setComponentVersionsLister(
+//                            SpringVersionLister.class);
+//                }
+//            }
+//        });
     }
 }
